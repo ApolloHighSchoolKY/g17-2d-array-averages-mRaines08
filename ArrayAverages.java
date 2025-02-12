@@ -13,6 +13,7 @@ public class ArrayAverages
   public void rowAverages()
   {
     int sum;
+    double rowAvg = 0.0;
     System.out.println("The average of each row is: ");
 
     for(int[] row : ray)
@@ -22,7 +23,8 @@ public class ArrayAverages
       for(int c : row)
         sum += c;
 
-      System.out.print(sum/ray[0].length + " ");
+      rowAvg = sum/ray[0].length;
+      System.out.print(rowAvg + " ");
     }
     System.out.println("\n");
   }
@@ -35,6 +37,7 @@ public class ArrayAverages
   public void columnAverages()
   {
     int sum;
+    double colAvg = 0.0;
     System.out.println("The average of each collunm is: ");
 
     for(int c = 0; c < ray[0].length; c++)
@@ -44,19 +47,24 @@ public class ArrayAverages
       for(int r = 0; r < ray.length; r++)
         sum += ray[r][c];
 
-      System.out.print( sum/ray.length + " ");
+      colAvg = sum/ray.length;
+      System.out.print(colAvg + " ");
     }
   }
 
   public void arrayAverage()
   {
     int sum = 0;
+    double avg = 0.0;
 
     for(int[] row : ray)
       for(int c : row)
         sum += c;
 
-    System.out.println("\n\nThe average of the entire array of values is " + sum/(ray.length * ray[0].length) + ".\n");
+    //    total / (    rows   *      cols    )
+    avg = sum   / (ray.length * ray[0].length);
+
+    System.out.println("\n\nThe average of the entire array of values is " + avg + ".\n");
   }
 
   public String toString()
